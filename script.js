@@ -10,7 +10,7 @@ function createGrid(rows, cols){
     gridSquare.classList.add("gridSquare")
     container.appendChild(gridSquare);
     gridSquare.addEventListener("mouseover", (event) =>{
-    gridSquare.style.cssText += "background-color: black;"
+    gridSquare.style.cssText += "background-color: rgb(" + changeBackground() + "," + changeBackground() + "," + changeBackground() + ");";
   });
   };
 };
@@ -26,5 +26,11 @@ resize.addEventListener("click", function changeSize(size){
     createGrid(16,16)
   };
 });
+
+
+function changeBackground(num){
+  value = Math.floor(Math.random() * 255)
+  return value;
+}
 
 createGrid(16, 16);
